@@ -1,4 +1,4 @@
-For quick evision on:
+For quick revision on:
 
         a. Coding/ DSA
         b. System Design
