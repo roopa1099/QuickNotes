@@ -16,7 +16,19 @@ import java.util.List;
  * Inorder traversal gives sorted array of values.
  * 
  * 
- * log(n)
+ * log(n) Avg search
+ * 
+ * 
+ * 
+ * Worst case (when the tree degenerates into a linear structure, like a linked
+ * list) is O(n), which happens if the nodes are inserted in an already sorted
+ * order.
+ * 
+ ** 2
+ *** \
+ **** 3
+ ***** \
+ ****** 4
  * 
  * @param root
  * @param val
@@ -86,11 +98,62 @@ public class BST {
 
     }
 
+    public TreeNode deleteNodeInBst(TreeNode root, int val) {
+        // find node:
+        // no child return null
+        // 1 child replace and return child
+        // 2 children:
+        // replace with inorder succesor or inorder predecessor
+        // delete the above got node(inorder succesor or inorder predecessor)
+
+        if (root == null) {
+            return root;
+        }
+
+        if (root.value < val) {
+            root.right = deleteNodeInBst(root.right, val);
+        } else if (root.value > val) {
+            root.left = deleteNodeInBst(root.left, val);
+        } else {
+            // found node
+            if (root.left == null && root.right == null) {
+                return null;
+            } else {
+                // 1 child
+                if (root.left == null) {
+                    return root.right;
+                } else if (root.right == null) {
+                    return root.left;
+                } else {
+                    // 2 children
+
+                    TreeNode inorderSuccessor = findMin(root.right); // O(logN)
+                    root.value = inorderSuccessor.value;
+                    root.right = deleteNodeInBst(root.right, inorderSuccessor.value); // O(logN search and delete that
+                                                                                      // leaf node)
+                }
+            }
+
+        }
+        return root;
+
+    }
+
+    private TreeNode findMin(TreeNode rightNode) {
+        while (rightNode.left != null) {
+            rightNode = rightNode.left;
+        }
+        return rightNode;
+    }
+
     public static void main(String[] args) {
         BST bst = new BST();
         List<Integer> list = Arrays.asList(3, 1, 6, 8, 4);
         TreeNode node = bst.createBST(list);
         bst.inorderTraversal(node);
         System.out.println(bst.search(node, 4));
+        System.out.println(bst.deleteNodeInBst(node, 1));
+        System.out.println("After Deletion >>>>>>>");
+        bst.inorderTraversal(node);
     }
 }
