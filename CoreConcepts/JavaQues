@@ -1,0 +1,20 @@
+What are the differences between HashMap, LinkedHashMap, and TreeMap? When would you use each?
+How does the equals() and hashCode() contract work? Why is it important in collections?
+Explain the difference between final, finally, and finalize().
+What is the transient keyword, and when would you use it?
+What is the difference between static and instance variables?
+How does Java achieve platform independence?
+What is garbage collection, and how does it work in Java?
+How is HashMap implemented internally? What are the key changes in HashMap in Java 8?
+What are the differences between ArrayList and LinkedList?
+Why is ConcurrentHashMap faster than Hashtable?
+Explain the difference between map() and flatMap() in streams.
+How does the default method in interfaces work? Why was it introduced in Java 8?
+What is the difference between Function, Predicate, and Consumer in functional programming?
+How do you ensure immutability in Java? Give an example.
+How would you implement dependency injection in Java?
+
+What is the purpose of try-with-resources in Java?  It ensures that resources such as files, 
+sockets, or database connections are properly closed after their usage, even if an exception occurs.
+
+How does the StringBuilder differ from StringBuffer? When would you use each?
