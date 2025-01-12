@@ -18,3 +18,12 @@ What is the purpose of try-with-resources in Java?  It ensures that resources su
 sockets, or database connections are properly closed after their usage, even if an exception occurs.
 
 How does the StringBuilder differ from StringBuffer? When would you use each?
+
+. What is a functional interface in Java?
+Answer:
+  A functional interface is an interface with exactly one abstract method.
+  Functional interfaces are used with lambda expressions and can also have default and static methods.
+  Marked with @FunctionalInterface annotation (optional but recommended).
+  Examples:
+  
+  Runnable, Callable, Supplier, Consumer, Function, etc.
