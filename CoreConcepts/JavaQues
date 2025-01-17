@@ -38,4 +38,23 @@ public class Main {
         Calculator add = (a, b) -> a + b;
         System.out.println(add.calculate(5, 3)); // Output: 8
     }
+
 }
+
+
+What can have genric data type?
+1. Classes
+2. Interfaces
+3. Methods
+4. Constructors
+5. Collections
+6. Enums
+
+
+Can classes be private?
+Difference between volatile and atomic : Volatile ensures that changes doen to the variable is visile across all threads.  
+In atomic variables incr or decr are performed atomically without needing explicit synchronization, basically they are thread safe.
+Atomic classes internally use volatile variables to ensure visibility.
+
+Runnable vs Callable
+
